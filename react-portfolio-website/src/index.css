@@ -15,8 +15,9 @@
     --background-color: #071e38; /*Color for background of body */
     --backgroundVariant: #ffffff; /*Variant of background */
     --primary-color: #4f4f4f;
+    --edited-gray: rgba(255,255,255,0.6); /*for transparent ish*/
 
-
+    --transition: all 400ms ease;
 
     --containter-width-lg: 75%;
     --container-width-md: 86%;
@@ -28,4 +29,91 @@ body{
     background: var(--background-color);
     color: white;
     line-height: 1.7;
+}
+
+/* Normal Styling*/
+.container{
+    width: var(--containter-width-lg);
+    margin: 0 auto; /*middle*/
+}
+/*headers*/
+
+h1,h2,h3,h4,h5{
+    font-weight: 500;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+section{
+    margin-top: 8rem;
+
+}
+
+section > h2, section > h5{
+    text-align: center;
+    color: var(--edited-gray);
+
+}
+section > h2{
+    color: white;
+    margin-bottom: 3rem;
+}
+
+a {
+    color: white;
+    transition: var(--transition);
+}
+
+a:hover{
+    color: black;
+}
+.btn{
+    width: max-content;
+    display: inline-block;
+    color: white;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: var(--transition);
+}
+.btn:hover{
+    background: white;
+    color: var(--background-color);
+    border-color: transparent;
+}
+
+.btn-primary{
+    background-color: white;
+    color: var(background-color);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*FOR TABLETS */
+
+@media screen and (max-width: 1024px){
+    .container{
+        width: var(--container-width-md);
+    }
+    section{
+        margin-top: 6rem;
+    }
+}
+
+/*FOR PHONES */
+
+@media screen and (max-width: 600px){
+    .container{
+        width: var(--container-width-ms);
+    }
+    section > h2{
+        margin-bottom: 2rem;
+    }
 }
